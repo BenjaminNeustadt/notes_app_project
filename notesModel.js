@@ -14,8 +14,6 @@ class NotesModel{
   reset(){
     return this.notes.length = 0;
   }
-
-
 }
 
 module.exports = NotesModel;

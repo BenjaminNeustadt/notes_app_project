@@ -1,7 +1,6 @@
 {
   "name": "8_notes_app_project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,5 +11,17 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^28.1.2"
-  }
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "^28.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminNeustadt/notes_app_project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BenjaminNeustadt/notes_app_project/issues"
+  },
+  "homepage": "https://github.com/BenjaminNeustadt/notes_app_project#readme",
+  "description": ""
 }

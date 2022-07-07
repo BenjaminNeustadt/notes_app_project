@@ -8,14 +8,33 @@ const NotesModel = require('./notesModel');
 
 describe('Page View', () => {
 
-  it('displays the list of notes on page, which should at first be empty array', () => {
+  beforeEach(() => {
     document.body.innerHTML = fs.readFileSync('./index.html');
-    const model = new NotesModel();
-    const view = new NotesView(model);
+    model = new NotesModel();
+    view = new NotesView(model);
+  });
+
+  it('displays the list of notes on page', () => {
     model.addNote('hello?');
     model.addNote('there?');
+    model.addNote('yelpe?');
     view.displayNotes();
-    expect(document.querySelectorAll('p').length).toEqual(2);
+    expect(document.querySelectorAll('div.note').length).toEqual(3);
+  });
+
+  it('creates a new div when the user clicks on the button', () => {
+    const ButtonEl = document.querySelector('#post-note-button')
+    ButtonEl.click();
+    expect(document.querySelector('div.note')).not.toBeNull();
+  });
+
+  it('displays the notes when user inputs string and clicks Post noted', () => {
+    const input = document.querySelector('#postit-input');
+    input.value = "This is a test";
+    const ButtonEl = document.querySelector('#post-note-button');
+    ButtonEl.click();
+    expect(document.querySelectorAll('div.note').length).toEqual(1);
+    expect(document.querySelectorAll('div.note')[0].innerText).toEqual('This is a test');
   });
 
 });

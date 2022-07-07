@@ -7,7 +7,7 @@ console.log('The notes app is running, great');
 
 // console.log(model.getNotes());
 const model = new NotesModel();
-model.addNote('This is an example note');
+//model.addNote('This is an example note');
 
 const view = new NotesView(model);
 

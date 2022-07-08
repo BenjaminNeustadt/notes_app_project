@@ -41,8 +41,12 @@
         addNewNote(newNote) {
           this.model.addNote(newNote);
           this.displayNotes();
+          document.querySelector("#postit-input").value = "";
         }
         displayNotes() {
+          document.querySelectorAll(".note").forEach((n) => {
+            n.remove();
+          });
           const notes = this.model.getNotes();
           notes.forEach((n) => {
             const note = document.createElement("div");

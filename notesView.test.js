@@ -37,4 +37,13 @@ describe('Page View', () => {
     expect(document.querySelectorAll('div.note')[0].innerText).toEqual('This is a test');
   });
 
+  it('when displayNotes() is called twice it shows there should still be the right number of notes from the model on the page', () => {
+    model.addNote('hello?');
+    model.addNote('there?');
+    model.addNote('yelpe?');
+    view.displayNotes();
+    view.displayNotes();
+    expect(document.querySelectorAll('div.note').length).toEqual(3);
+  });
+
 });
